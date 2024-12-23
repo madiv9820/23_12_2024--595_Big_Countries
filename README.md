@@ -49,16 +49,16 @@
     - **PySpark:**
         ```python3 []
         def big_countries(world: pyspark.sql.dataframe.DataFrame) -> pyspark.sql.dataframe.DataFrame:
-            output = world.filter((world.area >= 3000000)|
-                                (world.population >= 25000000))\
+            output = world.filter((world.area >= 3000000) | 
+                                    (world.population >= 25000000))\
                             .select(['name', 'population', 'area'])
             return output    
         ```
     - **Pandas:**
         ```python3 []
         def big_countries(world: pd.DataFrame) -> pd.DataFrame:
-            output = world[(world.area >= 3000000)|
-                        (world.population >= 25000000)]
+            output = world[(world.area >= 3000000) |
+                            (world.population >= 25000000)]
             output = output[['name', 'population', 'area']]
             output = pd.DataFrame(output)
             return output
